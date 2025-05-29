@@ -24,12 +24,15 @@ input[type="checkbox"] {
     z-index: 100;
 }
 
-.todoDeleted input[type="checkbox"] {
+.todoDeleted input[type="checkbox"], .todoDeleted input[type="checkbox"]:hover {
     background-color: var(--color-black);
 }
 
 .todoDeleted input[type="checkbox"]:checked {
     background-color: transparent;
+}
+.todoDeleted input[type="checkbox"]:checked+i, .todoDeleted input[type="checkbox"]:checked:hover+i {
+    background-color: var(--color-black);
 }
 
 input[type="checkbox"]:focus, input[type="checkbox"]:hover {
