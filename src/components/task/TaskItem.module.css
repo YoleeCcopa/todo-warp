@@ -21,6 +21,7 @@ input[type="checkbox"] {
     border-radius: 0.5rem;
     outline: none;
     transition: ease 0.4s;
+    z-index: 100;
 }
 
 .todoDeleted input[type="checkbox"] {
@@ -59,7 +60,7 @@ input[type="checkbox"]:focus, input[type="checkbox"]:hover {
 input:checked, input:checked:focus, input:checked:hover {
     background-color: transparent;
     transform: scale(0.5);
-    transition: ease 0.4s;  
+    transition: ease 0.4s;
 }
 
 input:checked + i {
@@ -78,7 +79,7 @@ input:checked:focus + i, input:checked:hover + i {
     width: 100%;
     margin-left: 0.5rem;
     overflow: hidden;
-    padding: .2rem 0;
+    padding: .1rem 0;
 }
 
 .todoDeleted label {
