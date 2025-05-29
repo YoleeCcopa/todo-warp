@@ -30,7 +30,7 @@ button.iconBtn:focus, button.iconBtn:hover {
 }
 
 button.iconBtn:disabled {
-    background-color: var(--color-gray);
-    color: var(--color-black);
+    background-color: var(--color-black);
+    color: var(--color-purple);
     cursor: default;
 }
