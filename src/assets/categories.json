@@ -1,0 +1,25 @@
+[{
+    "id":"jRmg6zE6ys",
+    "name":"cleaning", 
+    "icon":"mdiCleaning"
+},
+{
+    "id":"BETwdGAyEl",
+    "name":"work", 
+    "icon":"mdiComputerClassic"
+},
+{
+    "id":"aftzjRI68G",
+    "name":"errants", 
+    "icon":"mdiLocalGroceryStore"
+},
+{
+    "id":"2Lephmqv4a",
+    "name":"learning", 
+    "icon":"mdiNotebook"
+},
+{
+    "id":"PTQi82ZDwv",
+    "name":"health", 
+    "icon":"mdiMedication"
+}]

@@ -1,26 +1,22 @@
 import TaskItem from './TaskItem'
 import styles from "./TaskList.module.css";
 
-interface Todo {
-    id: number;
-    text: string;
-}
+import { type Task } from './../../assets/Interfaces'
 
 interface Props {
-    tasks: Todo[];
-    onDelete: (id: number) => void;
-    onEdit: (id: number) => void;
+    tasks: Task[];
+    onDelete: (id: string) => void;
+    onEdit: (id: string) => void;
+    onRestore: (id: string) => void;
 }
 
-const TaskList = ({ tasks, onDelete, onEdit }: Props) => {
+const TaskList = ({ tasks, onDelete, onEdit, onRestore }: Props) => {
     return (
         <ul className={styles.list}>
             <h2>List of Cleaning Tasks</h2>
 
             {tasks.map(todo => (
-                <TaskItem key={todo.id} id={todo.id} name='task' onDelete={onDelete} onEdit={onEdit}>
-                    <>{todo.text}</>
-                </TaskItem>
+                <TaskItem task={todo} onDelete={onDelete} onEdit={onEdit} onRestore={onRestore}></TaskItem>
             ))}
         </ul>
     )

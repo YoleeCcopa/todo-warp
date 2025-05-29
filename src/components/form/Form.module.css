@@ -1,0 +1,74 @@
+form {
+    width: 100%;
+}
+
+.container {
+    background-color: var(--color-white);
+    width: 100%;
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.inputTxt {
+    position: relative;
+    width: 100%;
+    height: min-content;
+    font-family: var(--font-space-grotesk);
+    margin-bottom: 1rem;
+}
+
+.inputTxt input {
+    background-color: transparent;
+    outline: none;
+    border: solid 0.1rem var(--color-bluish);
+    background-color: var(--color-bluish);
+    color: transparent;
+    border-radius: 0.5rem;
+    padding: 0.9rem 0.7rem;
+    width: 100%;
+    transition: ease 0.4s;
+    font-size: 1rem;
+}
+
+.inputTxt label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: .8rem;
+    color: var(--color-white);
+    transition: ease 0.4s;
+}
+
+.inputTxt input:focus, 
+.inputTxt input:valid {
+    background-color: var(--color-white);
+    color: var(--color-bluish);
+}
+
+.inputTxt input:focus + label, 
+.inputTxt input:valid + label {
+    top: 5%;
+    color: var(--color-white);
+    font-size: .8rem;
+    background-color: var(--color-bluish);
+    padding: 0.2rem 1rem;
+    border-radius: 0.2rem;
+}
+
+.container button {
+    margin-top: 1rem;
+    background-color: var(--color-bluish);
+    outline: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 0.5rem;
+    color: var(--color-white);
+    text-transform: capitalize;
+    transition: ease .4s;
+    border: solid .1rem var(--color-bluish);
+}
+
+.container button:hover, .container button:focus {
+    background-color: var(--color-yellow);
+    color: var(--color-black);
+    border-color: var(--color-black);
+}
