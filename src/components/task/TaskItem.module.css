@@ -28,6 +28,10 @@ input[type="checkbox"] {
     background-color: var(--color-black);
 }
 
+.todoDeleted input[type="checkbox"]:checked {
+    background-color: transparent;
+}
+
 input[type="checkbox"]:focus, input[type="checkbox"]:hover {
     background-color: var(--color-yellow);
 }
