@@ -54,12 +54,23 @@ function App() {
     };
 
     /**
-     * Delete a task from the list by id.
+     * Delete a task from the list by id. isDeleted: true.
      * @param id String value with the id to search the task.
      */
     const deleteTodo = (id: string) => {
         const updatedTodos = todos.map(todo =>
             todo.id === id ? { ...todo, isDeleted: true } : todo
+        );
+        updateTodos(updatedTodos);
+    };
+
+    /**
+     * Restore a task from the list by id. isDeleted: false.
+     * @param id String value with the id to search the task.
+     */
+    const restoreTodo = (id: string) => {
+        const updatedTodos = todos.map(todo =>
+            todo.id === id ? { ...todo, isDeleted: false } : todo
         );
         updateTodos(updatedTodos);
     };
@@ -82,7 +93,7 @@ function App() {
         <Container>
             <h1>Simple To-do List</h1>
             <div className='flexCont'>
-                <TaskList tasks={todos} onDelete={deleteTodo} onEdit={editTodo}/>
+                <TaskList tasks={todos} onDelete={deleteTodo} onEdit={editTodo} onRestore={restoreTodo}/>
             </div>
             <div className='flexCont'>
                 <Form onSubmit={addTodo}></Form>

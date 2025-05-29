@@ -6,6 +6,7 @@ button.iconBtn {
     outline: none;
     border: none;
     transition: ease 0.4s;
+    cursor: pointer;
 }
 
 button.iconBtn.edit {
@@ -18,7 +19,18 @@ button.iconBtn.delete {
     color: var(--color-white);
 }
 
+button.iconBtn.restore {
+    background-color: var(--color-white);
+    color: var(--color-black);
+}
+
 button.iconBtn:focus, button.iconBtn:hover {
     background-color: var(--color-yellow);
     color: var(--color-black);
+}
+
+button.iconBtn:disabled {
+    background-color: var(--color-gray);
+    color: var(--color-black);
+    cursor: default;
 }
