@@ -1,0 +1,55 @@
+form {
+    width: 100%;
+}
+
+.container {
+    background-color: var(--color-white);
+    width: 100%;
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.inputTxt {
+    position: relative;
+    width: 100%;
+    height: min-content;
+    font-family: var(--font-space-grotesk);
+}
+
+.inputTxt input {
+    background-color: transparent;
+    outline: none;
+    border: solid 0.1rem var(--color-bluish);
+    background-color: var(--color-bluish);
+    color: transparent;
+    border-radius: 0.5rem;
+    padding: 0.9rem 0.7rem;
+    width: 100%;
+    transition: ease 0.4s;
+}
+
+.inputTxt label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: .8rem;
+    color: var(--color-white);
+    transition: ease 0.4s;
+}
+
+
+.inputTxt input:focus, 
+.inputTxt input:valid {
+    background-color: var(--color-white);
+    color: var(--color-bluish);
+}
+
+.inputTxt input:focus + label, 
+.inputTxt input:valid + label {
+    top: 5%;
+    color: var(--color-white);
+    font-size: .8rem;
+    background-color: var(--color-bluish);
+    padding: 0.2rem 1rem;
+    border-radius: 0.2rem;
+}

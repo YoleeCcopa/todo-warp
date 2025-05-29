@@ -18,7 +18,7 @@ const TaskItem = ({ task, onDelete, onEdit, onRestore }: Props) => {
         <li className={`${styles.wrapper} ${task.isDeleted ? styles.todoDeleted : ''}`}>
             <div className={checked ? styles.check : styles.active}>
                 <input type="checkbox" 
-                    name={task.id} 
+                    name={task.id}
                     id={task.id} 
                     onChange={(e) => setChecked(e.target.checked)} 
                     disabled={task.isDeleted}
