@@ -1,16 +1,35 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import TaskData from './assets/tasks.json';
+import CategoriesData from './assets/categories.json';
 import './App.css'
 import Container from './components/container/Container'
 import Form from './components/form/Form'
 import TaskList from './components/task/TaskList'
 
-interface Todo {
+interface Task {
     id: number;
     text: string;
 }
 
+interface Categories {
+    id: string;
+    name: string;
+    icon: string;
+}
+
 function App() {
-    const [todos, setTodos] = useState<Todo[]>([]);
+    const [todos, setTodos] = useState<Task[]>([]);
+
+    useEffect(() => {
+    const mappedTodos: Task[] = TaskData
+        .filter(item => !item.isDeleted)
+        .map(item => ({
+            id: parseInt(item.id, 10),
+            text: item.content
+        }));
+
+    setTodos(mappedTodos);
+    }, []);
 
     const addTodo = (text: string) => {
         const newTodo = { id: Date.now(), text };

@@ -1,0 +1,35 @@
+[{
+    "id":"4CsLQkeEFm",
+    "content":"Barrer sala",
+    "category":"cleaning",
+    "isCompleted":false,
+    "isDeleted":false
+},
+{
+    "id":"BLNvt0lmBY",
+    "content":"Fill documentation",
+    "category":"work",
+    "isCompleted":false,
+    "isDeleted":false
+},
+{
+    "id":"mmlsuS8AUt",
+    "content":"Buy milk",
+    "category":"errants",
+    "isCompleted":false,
+    "isDeleted":false
+},
+{
+    "id":"9U2zOSgpjN",
+    "content":"Finish homework",
+    "category":"learning",
+    "isCompleted":false,
+    "isDeleted":false
+},
+{
+    "id":"3pv1lgL3Hq",
+    "content":"Buy cold pills",
+    "category":"health",
+    "isCompleted":false,
+    "isDeleted":false
+}]
