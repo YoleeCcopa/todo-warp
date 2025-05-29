@@ -92,11 +92,13 @@ function App() {
     return (
         <Container>
             <h1>Simple To-do List</h1>
-            <div className='flexCont'>
-                <TaskList tasks={todos} onDelete={deleteTodo} onEdit={editTodo} onRestore={restoreTodo}/>
-            </div>
-            <div className='flexCont'>
-                <Form onSubmit={addTodo}></Form>
+            <div className='flexcont'>
+                <div className='flexCont tasklist'>
+                    <TaskList tasks={todos} onDelete={deleteTodo} onEdit={editTodo} onRestore={restoreTodo}/>
+                </div>
+                <div className='flexCont form'>
+                    <Form onSubmit={addTodo}></Form>
+                </div>
             </div>
         </Container>
     )
