@@ -1,21 +1,13 @@
 import { useEffect, useState } from 'react'
+import { type Task, type Categories } from './assets/Interfaces'
+
 import TaskData from './assets/tasks.json';
 import CategoriesData from './assets/categories.json';
+
 import './App.css'
 import Container from './components/container/Container'
 import Form from './components/form/Form'
 import TaskList from './components/task/TaskList'
-
-interface Task {
-    id: number;
-    text: string;
-}
-
-interface Categories {
-    id: string;
-    name: string;
-    icon: string;
-}
 
 function App() {
     const [todos, setTodos] = useState<Task[]>([]);
@@ -24,7 +16,7 @@ function App() {
     const mappedTodos: Task[] = TaskData
         .filter(item => !item.isDeleted)
         .map(item => ({
-            id: parseInt(item.id, 10),
+            id: item.id,
             text: item.content
         }));
 
@@ -32,15 +24,15 @@ function App() {
     }, []);
 
     const addTodo = (text: string) => {
-        const newTodo = { id: Date.now(), text };
+        const newTodo = { id: Date.now().toString(), text };
         setTodos(prev => [...prev, newTodo]);
     };
 
-    const deleteTodo = (id: number) => {
+    const deleteTodo = (id: string) => {
         setTodos(prev => prev.filter(todo => todo.id !== id));
     };
 
-    const editTodo = (id: number) => {
+    const editTodo = (id: string) => {
         const newText = prompt("Edit todo:");
         if (newText) {
             setTodos(prev =>

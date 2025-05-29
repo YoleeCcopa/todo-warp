@@ -2,14 +2,14 @@ import TaskItem from './TaskItem'
 import styles from "./TaskList.module.css";
 
 interface Todo {
-    id: number;
+    id: string;
     text: string;
 }
 
 interface Props {
     tasks: Todo[];
-    onDelete: (id: number) => void;
-    onEdit: (id: number) => void;
+    onDelete: (id: string) => void;
+    onEdit: (id: string) => void;
 }
 
 const TaskList = ({ tasks, onDelete, onEdit }: Props) => {

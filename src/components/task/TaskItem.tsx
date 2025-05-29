@@ -3,11 +3,11 @@ import styles from "./TaskItem.module.css";
 import IconButton from "../buttons/IconButton";
 
 interface Props {
-    id: number;
+    id: string;
     name: string;
     children: ReactNode;
-    onDelete: (id: number) => void;
-    onEdit: (id: number) => void;
+    onDelete: (id: string) => void;
+    onEdit: (id: string) => void;
 }
 
 const TaskItem = ({ id, name, children, onDelete, onEdit }: Props) => {
