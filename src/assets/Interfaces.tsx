@@ -1,6 +1,7 @@
 export interface Task {
     id: string;
     text: string;
+    isDeleted: boolean;
 }
 
 export interface Categories {

@@ -1,13 +1,10 @@
 import TaskItem from './TaskItem'
 import styles from "./TaskList.module.css";
 
-interface Todo {
-    id: string;
-    text: string;
-}
+import { type Task } from './../../assets/Interfaces'
 
 interface Props {
-    tasks: Todo[];
+    tasks: Task[];
     onDelete: (id: string) => void;
     onEdit: (id: string) => void;
 }

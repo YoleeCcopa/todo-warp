@@ -6,6 +6,13 @@
     "isDeleted":false
 },
 {
+    "id":"4CsLQ23EFm",
+    "content":"Lavar platos",
+    "category":"cleaning",
+    "isCompleted":false,
+    "isDeleted":false
+},
+{
     "id":"BLNvt0lmBY",
     "content":"Fill documentation",
     "category":"work",
