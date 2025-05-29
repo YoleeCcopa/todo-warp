@@ -37,7 +37,7 @@ const Form = ({ onSubmit }: Props) => {
                     <label htmlFor="newTaskName">Name</label>
                 </div>
                 <Dropdown id="newTaskCategroy" header="Category" values={categories} setValue={setCategory}></Dropdown>
-                <button onClick={() => console.log(category)}>ADD</button>
+                <button onClick={() => console.log(category)}>add</button>
             </div>
         </form>
     )

@@ -14,6 +14,7 @@ form {
     width: 100%;
     height: min-content;
     font-family: var(--font-space-grotesk);
+    margin-bottom: 1rem;
 }
 
 .inputTxt input {
@@ -26,6 +27,7 @@ form {
     padding: 0.9rem 0.7rem;
     width: 100%;
     transition: ease 0.4s;
+    font-size: 1rem;
 }
 
 .inputTxt label {
@@ -36,7 +38,6 @@ form {
     color: var(--color-white);
     transition: ease 0.4s;
 }
-
 
 .inputTxt input:focus, 
 .inputTxt input:valid {
@@ -52,4 +53,22 @@ form {
     background-color: var(--color-bluish);
     padding: 0.2rem 1rem;
     border-radius: 0.2rem;
+}
+
+.container button {
+    margin-top: 1rem;
+    background-color: var(--color-bluish);
+    outline: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 0.5rem;
+    color: var(--color-white);
+    text-transform: capitalize;
+    transition: ease .4s;
+    border: solid .1rem var(--color-bluish);
+}
+
+.container button:hover, .container button:focus {
+    background-color: var(--color-yellow);
+    color: var(--color-black);
+    border-color: var(--color-black);
 }
