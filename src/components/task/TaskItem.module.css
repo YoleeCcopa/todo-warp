@@ -1,0 +1,79 @@
+.wrapper {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    height: 1.8rem;
+    width: 1.8rem;
+    background-color: var(--color-purple);
+    border-radius: 0.5rem;
+    outline: none;
+    transition: ease 0.4s;
+}
+
+input[type="checkbox"]:focus, input[type="checkbox"]:hover {
+    background-color: var(--color-yellow);
+}
+
+.mdiCheckDecagram {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='m23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68zm-13 5l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}
+
+.check, .active {
+    display: flex;
+}
+
+.check i, .active i {
+    position: absolute;
+    color: transparent;
+    transition: ease 0.4s;
+    transform: scale(0.5);
+}
+
+input:checked, input:checked:focus, input:checked:hover {
+    background-color: transparent;
+    transform: scale(0.5);
+    transition: ease 0.4s;  
+}
+
+input:checked + i {
+    display: block;
+    color: var(--color-white);
+    transition: ease 0.4s;  
+    transform: scale(1);
+}
+
+input:checked:focus + i, input:checked:hover + i {
+    color: var(--color-yellow);
+}
+
+.wrapper label {
+    color: var(--color-white);
+    width: 100%;
+    margin-left: 0.5rem;
+}
+
+.checkbox_btns {
+    width: min-content;
+    display: flex;
+    gap: 0.5rem;
+    margin-left: 0.5rem;
+}
