@@ -4,7 +4,11 @@ import type { Category } from "../../assets/Interfaces";
 import CategoryData from "./../../assets/categories.json";
 import ButtonCard from "../buttons/buttonCard/ButtonCard";
 
-const CategoryCard = () => {
+interface Props {
+  onCategorySelect: (category: string) => void;
+}
+
+const CategoryCard = ({ onCategorySelect }: Props) => {
     const categories: Category[] = CategoryData.map(item => ({
         id: item.id,
         name: item.name,
@@ -17,7 +21,8 @@ const CategoryCard = () => {
                 {categories.map((category) => (
                     <ButtonCard id={category.id} 
                     icon={category.icon}
-                    name={category.name}/>
+                    name={category.name}
+                    onClick={() => onCategorySelect(category.name)}/>
                 ))}
             </div>
         </>
