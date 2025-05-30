@@ -7,6 +7,7 @@ import './App.css'
 import Container from './components/container/Container'
 import Form from './components/form/Form'
 import TaskList from './components/task/TaskList'
+import CategoryCard from './components/categories/CategoryCard';
 
 function App() {
     const [todos, setTodos] = useState<Task[]>([]);
@@ -97,6 +98,9 @@ function App() {
         <Container>
             <h1>Simple To-do List</h1>
             <div className='flexcont'>
+                <div className='flexCont categories'>
+                    <CategoryCard/>
+                </div>
                 <div className='flexCont tasklist'>
                     <TaskList tasks={todos} onDelete={deleteTodo} onEdit={editTodo} onRestore={restoreTodo}/>
                 </div>

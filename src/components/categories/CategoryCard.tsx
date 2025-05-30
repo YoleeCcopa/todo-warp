@@ -1,24 +1,26 @@
 import styles from "./CategoriesCard.module.css";
+import type { Category } from "../../assets/Interfaces";
 
-interface Category {
-    name: string;
-    icon: string;
-}
+import CategoryData from "./../../assets/categories.json";
+import ButtonCard from "../buttons/buttonCard/ButtonCard";
 
-interface Props {
-    values: Category[];
-}
+const CategoryCard = () => {
+    const categories: Category[] = CategoryData.map(item => ({
+        id: item.id,
+        name: item.name,
+        icon: item.icon
+    }));
 
-const CategoryCard = ({ values }: Props) => {
     return (
-        <div className={styles.list}>
-            {values.map((category) => (
-                <button key={category.name}>
-                    <i className={category.icon}></i>
-                    <label htmlFor={category.name}>{category.name}</label>
-                </button>
-            ))}
-        </div>
+        <>
+            <div className={styles.categoryList}>
+                {categories.map((category) => (
+                    <ButtonCard id={category.id} 
+                    icon={category.icon}
+                    name={category.name}/>
+                ))}
+            </div>
+        </>
     )
 }
 
