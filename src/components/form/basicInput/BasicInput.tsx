@@ -8,7 +8,7 @@ interface Props {
     isRequired?: boolean;
 }
 
-const BasicInput = ({ id, label, value, onChange, isRequired }: Props) => {    
+const BasicInput = ({ id, label, value, onChange, isRequired }: Props) => {
     return (
         <div className={styles.inputTxt}>
             <input type="text"

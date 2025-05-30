@@ -5,7 +5,7 @@ import styles from "./Form.module.css";
 import CategoryData from './../../assets/categories.json';
 
 import Dropdown from "./dropdown/Dropdown"
-import BasicInput from "./basicInput/basicInput";
+import BasicInput from "./basicInput/BasicInput";
 
 interface Props {
     onSubmit: (task: Task) => void;
