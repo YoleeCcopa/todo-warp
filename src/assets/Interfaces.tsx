@@ -1,10 +1,12 @@
 export interface Task {
     id: string;
-    text: string;
+    content: string;
+    category: string;
+    isCompleted: boolean;
     isDeleted: boolean;
 }
 
-export interface Categories {
+export interface Category {
     id: string;
     name: string;
     icon: string;
