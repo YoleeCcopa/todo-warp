@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./TaskItem.module.css";
-import IconButton from "../buttons/IconButton";
+import IconButton from "./../buttons/iconButton/IconButton";
 
 import { type Task } from './../../assets/Interfaces'
 
