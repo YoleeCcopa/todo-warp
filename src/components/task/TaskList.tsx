@@ -9,9 +9,10 @@ interface Props {
     onDelete: (id: string) => void;
     onEdit: (id: string) => void;
     onRestore: (id: string) => void;
+    onToggle: (id: string) => void;
 }
 
-const TaskList = ({ tasks, category, onDelete, onEdit, onRestore }: Props) => {
+const TaskList = ({ tasks, category, onDelete, onEdit, onRestore, onToggle }: Props) => {
     return (
         <ul className={styles.list}>
             <h2>List of {category} Tasks</h2>
@@ -27,6 +28,7 @@ const TaskList = ({ tasks, category, onDelete, onEdit, onRestore }: Props) => {
                 onDelete={onDelete}
                 onEdit={onEdit}
                 onRestore={onRestore}
+                onToggle={onToggle}
                 />
             )))}
         </ul>
