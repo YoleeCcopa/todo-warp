@@ -1,4 +1,3 @@
-import { useState } from "react";
 import styles from "./TaskItem.module.css";
 import IconButton from "./../buttons/iconButton/IconButton";
 
@@ -9,18 +8,18 @@ interface Props {
     onDelete: (id: string) => void;
     onEdit: (id: string) => void;
     onRestore: (id: string) => void;
+    onToggle: (id: string) => void;
 }
 
-const TaskItem = ({ task, onDelete, onEdit, onRestore }: Props) => {
-    const [checked, setChecked] = useState(false);
-
+const TaskItem = ({ task, onDelete, onEdit, onRestore, onToggle }: Props) => {
     return (
         <li className={`${styles.wrapper} ${task.isDeleted ? styles.todoDeleted : ''}`}>
-            <div className={checked ? styles.check : styles.active}>
+            <div className={styles.check}>
                 <input type="checkbox" 
                     name={task.id}
                     id={task.id} 
-                    onChange={(e) => setChecked(e.target.checked)} 
+                    checked={task.isCompleted} 
+                    onChange={() => onToggle(task.id)}
                     disabled={task.isDeleted}
                 />
                 <i className={styles.mdiCheckDecagram}></i>

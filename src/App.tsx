@@ -103,6 +103,13 @@ function App() {
         }
     };
 
+    const toggleCompleted = (id: string) => {
+        const updatedTodos = todos.map(todo =>
+            todo.id === id ? { ...todo, isCompleted: !todo.isCompleted } : todo
+        );
+        updateTodos(updatedTodos);
+    };
+
     return (
         <Container>
             <h1>Simple To-do List</h1>
@@ -111,7 +118,7 @@ function App() {
                     <CategoryCard onCategorySelect={(selectedCategory) => setSelectedCategory(selectedCategory)}/>
                 </div>
                 <div className='flexCont tasklist'>
-                    <TaskList category={selectedCategory.toUpperCase()} tasks={filteredTasks} onDelete={deleteTodo} onEdit={editTodo} onRestore={restoreTodo}/>
+                    <TaskList category={selectedCategory.toUpperCase()} tasks={filteredTasks} onDelete={deleteTodo} onEdit={editTodo} onRestore={restoreTodo} onToggle={toggleCompleted}/>
                 </div>
                 <div className='flexCont form'>
                     <Form onSubmit={addTodo}></Form>
