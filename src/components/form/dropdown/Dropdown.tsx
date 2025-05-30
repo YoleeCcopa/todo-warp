@@ -1,5 +1,5 @@
 import styles from "./Dropdown.module.css";
-import { type Categories } from './../../assets/Interfaces'
+import { type Categories } from '../../../assets/Interfaces'
 
 interface Props {
     id: string;
