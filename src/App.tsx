@@ -11,7 +11,7 @@ import CategoryCard from './components/categories/CategoryCard';
 
 function App() {
     const [todos, setTodos] = useState<Task[]>([]);
-    const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+    const [selectedCategory, setSelectedCategory] = useState("");
 
     /**
      * Support function to update task list in local storage.
@@ -23,9 +23,12 @@ function App() {
     };
 
     // show all if no category selected
-    const filteredTasks = selectedCategory 
-    ? todos.filter(task => task.category === selectedCategory)
-    : todos;
+    // const filteredTasks = selectedCategory 
+    // ? todos.filter(task => task.category === selectedCategory)
+    // : todos;
+    const filteredTasks = todos
+    .filter(task => !task.isDeleted)
+    .filter(task => selectedCategory ? task.category === selectedCategory : true);
 
     /**
      * Load data from local storage, or JSON if local is empty.
@@ -108,7 +111,7 @@ function App() {
                     <CategoryCard onCategorySelect={(selectedCategory) => setSelectedCategory(selectedCategory)}/>
                 </div>
                 <div className='flexCont tasklist'>
-                    <TaskList tasks={filteredTasks} onDelete={deleteTodo} onEdit={editTodo} onRestore={restoreTodo}/>
+                    <TaskList category={selectedCategory.toUpperCase()} tasks={filteredTasks} onDelete={deleteTodo} onEdit={editTodo} onRestore={restoreTodo}/>
                 </div>
                 <div className='flexCont form'>
                     <Form onSubmit={addTodo}></Form>
