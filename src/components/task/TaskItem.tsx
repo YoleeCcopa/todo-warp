@@ -25,7 +25,7 @@ const TaskItem = ({ task, onDelete, onEdit, onRestore }: Props) => {
                 />
                 <i className={styles.mdiCheckDecagram}></i>
             </div>
-            <label htmlFor={task.id}>{task.text}</label>
+            <label htmlFor={task.id}>{task.content}</label>
             <div className={styles.checkbox_btns}>
                 <IconButton type="edit" icon="mdiEdit" onClick={() => onEdit(task.id)} disabled={task.isDeleted}/>
                 {!task.isDeleted ? (

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { type Task } from './assets/Interfaces'
+import type { Task } from './assets/Interfaces'
 
 import TaskData from './assets/tasks.json';
 
@@ -33,7 +33,9 @@ function App() {
             .filter(item => !item.isDeleted)
             .map(item => ({
                 id: item.id,
-                text: item.content,
+                content: item.content,
+                category: item.category,
+                isCompleted: item.isCompleted,
                 isDeleted: item.isDeleted
             }));
             updateTodos(mappedTodos);
@@ -42,13 +44,15 @@ function App() {
     
     /**
      * Add a new task to list.
-     * @param text String value to fill Task content.
+     * @param task Object Task to fill Task content.
      */
-    const addTodo = (text: string) => {
+    const addTodo = (task: Task) => {
         const newTodo: Task = {
-            id: Date.now().toString(),
-            text,
-            isDeleted: false
+            id: task.id,
+            content: task.content,
+            category: task.category,
+            isCompleted: task.isCompleted,
+            isDeleted: task.isDeleted
         };
         updateTodos([...todos, newTodo]);
     };
@@ -83,7 +87,7 @@ function App() {
         const newText = prompt("Edit todo:");
         if (newText) {
             const updatedTodos = todos.map(todo =>
-                todo.id === id ? { ...todo, text: newText } : todo
+                todo.id === id ? { ...todo, content: newText } : todo
             );
             updateTodos(updatedTodos);
         }

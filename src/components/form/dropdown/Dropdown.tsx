@@ -1,24 +1,34 @@
 import styles from "./Dropdown.module.css";
-import { type Categories } from '../../../assets/Interfaces'
+import type { Category } from '../../../assets/Interfaces'
 
 interface Props {
     id: string;
     header: string;
-    values: Categories[];
+    items: Category[];
+    value: string;
+    placeholder: string;
     setValue: (category: string) => void;
+    isRequired?: boolean;
 }
 
-const Dropdown = ({ id, header, values, setValue }: Props) => {
+const Dropdown = ({ id, header, items, value, placeholder, setValue, isRequired }: Props) => {
     return (
         <div className={styles.dropdown}>
             <label htmlFor={id} className={styles.header}>{header}</label>
-            <select name={id} key={id} id={id} onChange={(e) => setValue(e.target.value)} className={styles.select}>
-                {values.map((category) => (
+            <select
+                name={id}
+                id={id}
+                value={value}
+                onChange={(e) => setValue(e.target.value)}
+                className={styles.select} required
+            >
+                <option value="" disabled>{placeholder}</option>
+                {items.map((category) => (
                     <option key={category.id} value={category.name}>
                         {category.name}
                     </option>
                 ))}
-            </select> 
+            </select>
         </div>
     );
 };
