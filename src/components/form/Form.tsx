@@ -4,7 +4,8 @@ import styles from "./Form.module.css";
 
 import CategoryData from './../../assets/categories.json';
 
-import Dropdown from "../dropdown/Dropdown"
+import Dropdown from "./dropdown/Dropdown"
+import BasicInput from "./basicInput/basicInput";
 
 interface Props {
     onSubmit: (text: string) => void;
@@ -36,7 +37,6 @@ const Form = ({ onSubmit }: Props) => {
                     <input type="text" name="newTaskName" id="newTaskName" value={text} onChange={(e) => setText(e.target.value)} required autoComplete="off"/>
                     <label htmlFor="newTaskName">Name</label>
                 </div>
-                <Dropdown id="newTaskCategroy" header="Category" values={categories} setValue={setCategory}></Dropdown>
                 <button onClick={() => console.log(category)}>add</button>
             </div>
         </form>
